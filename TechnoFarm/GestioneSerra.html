@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet"
+          href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link
+            href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css"
+            rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link href="styleSheets/CssGestioneSerra.css"
+          rel="stylesheet" />
+
+    <link href="styleSheets/userpage.css" rel="stylesheet" />
+
+    <link href="styleSheets/homeStyle.css" rel="stylesheet" />
+
+    <title>TechnoFarm-Gestione serra</title>
+</head>
+
+<body>
+
+
+<nav id="header" class="navbar navbar-default navbar-fixed-top"
+     role="navigation">
+    <div class="container">
+
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse"
+                    data-target="#navbar-collapse-main">
+                <span class="sr-only"> Toggle navigation </span> <span
+                    class="icon-bar"></span> <span class="icon-bar"></span> <span
+                    class="icon-bar"></span>
+            </button>
+            <a id="logo" class="navbar-brand" href="index.html"><img
+                    id="immagineLogo" class="img-rounded"
+                    src="https://i.ibb.co/bFP8XmC/Logo2.png" alt="logo"></a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="navbar-collapse-main">
+            <ul class="nav navbar-nav navbar-right">
+                <li><li id = "leMieSerre"><a onclick='return check(false)' title="Le mie serre" style="color: #F5DEB3" class="vociMenu" href="LeMieSerre.html" data-toggle="modal" data-target="#modalLoginForm"> <i class="fa fa-pagelines"></i>
+                </a></li>
+            </ul>
+        </div>
+    </div>
+
+</nav>
+
+
+
+<div class="container-fluid">
+
+    <div class="row">
+        <div class="col-xs-3" id="monitoraggio">
+
+            <div id="titolomonitoraggio">
+                <strong>Parametri di monitoraggio</strong>
+            </div>
+            <br> <br>
+            <div class="parametriMonitoraggio">
+
+                <p>
+                    <strong>Temperatura </strong> <strong class="parametro">
+                    27° </strong>
+                </p>
+
+
+
+                <p>
+                    <strong>PH </strong> <strong class="parametro">5,5 </strong>
+                </p>
+
+
+
+                <p>
+                <p>
+                    <strong>Umidità terreno </strong> <strong class="parametro">
+                    60% </strong>
+                </p>
+
+
+
+                <p>
+                    <strong>Umidità aria </strong> <strong class="parametro">55%
+                </strong>
+                </p>
+
+            </div>
+            <hr style="border-color: black; border-top: 2px solid;">
+
+            <div>
+
+                <div id="titoloRegistroAttivita">
+                    <strong>Registro attività</strong>
+                </div>
+                <p id="titoloAttivitaEsecuzione" style="margin-top: 10%;">
+                    <strong> Attività in esecuzione: </strong>
+                </p>
+
+                <p id="labelNessunAttivitaInEsecuzione">Nessun attività.</p>
+                <p id="esecuzioneIrrigazione">Irrigazione</p>
+                <p id="esecuzioneTermoventilazione">Termoventilazione</p>
+                <p id="esecuzioneConcimazione">Concimazione</p>
+                <p id="esecuzioneUmidificazione">Umidificazione</p>
+                <p id="esecuzioneDiserbazione">Diserbazione</p>
+                <p id="esecuzioneDisinfestazione">Disinfestazione</p>
+
+                <p id="titoloAttivitaEsecuzione">
+                    <strong> Attività programmate: </strong>
+                </p>
+
+                <p id="labelNessunAttivitaProgrammazione">Nessun attività.</p>
+                <p id="programmazioneIrrigazione">Irrigazione</p>
+                <p id="programmazioneTermoventilazione">Termoventilazione</p>
+                <p id="programmazioneConcimazione">Concimazione</p>
+                <p id="programmazioneUmidificazione">Umidificazione</p>
+                <p id="programmazioneDiserbazione">Diserbazione</p>
+                <p id="programmazioneDisinfestazione">Disinfestazione</p>
+
+            </div>
+        </div>
+
+        <div class="col-xs-6" id="video"></div>
+
+        <div class="col-xs-3" id="funzionalita">
+
+            <div id="tutteLeFunzionalita">
+                <button type="button"
+                        class="btn btn-succes btn-md btnFunzionalita" id="Diserbazione">
+                    Diserbazione</button>
+
+                <br />
+
+                <button type="button"
+                        class="btn btn-succes btn-md btnFunzionalita" id="Concimazione">
+                    Concimazione</button>
+
+                <br />
+
+                <button type="button"
+                        class="btn btn-succes btn-md btnFunzionalita"
+                        id="Disinfestazione">Disinfestazione</button>
+
+                <br />
+
+                <button type="button"
+                        class="btn btn-succes btn-md btnFunzionalita"
+                        id="Termoventilazione">Termoventilazione</button>
+
+                <br />
+
+                <button type="button"
+                        class="btn btn-succes btn-md btnFunzionalita" id="Umidificazione">
+                    Umidificazione</button>
+
+                <br />
+
+                <button type="button"
+                        class="btn btn-succes btn-md btnFunzionalita" id="Irrigazione">
+                    Irrigazione</button>
+            </div>
+            <!-- tutti i pulsanti per accedere alle opzioni delle funzionalità -->
+
+            <div id="FunzionalitaDiserbazione">
+                <div class="grid-container">
+                    <div class="item1">
+                        <button type="button" id="indietroDiserbazione"
+                                class="btn btn-danger btn-sm tastoIndietroEetichetta">
+                            <strong><span class="glyphicon glyphicon-menu-left"
+                                          aria-hidden="true"></span> Indietro</strong>
+                        </button>
+                    </div>
+                    <div class="item2">
+                        <label>Diserbazione</label>
+                    </div>
+                </div>
+                <div class="grid-container">
+                    <div class="item3">
+                        <label id="labelAttivazioneDiserbazione" data-toggle="popover"
+                               title="Diserbazione attivata" data-placement="left"
+                               data-trigger="focus">Attiva</label>
+                    </div>
+                    <div class="item4">
+                        <label class="switch"> <input type="checkbox"
+                                                      id="bottoneAttivaDiserbazione"> <span
+                                class="slider round"></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="grid-container">
+                    <div class="item5">
+                        <p>Durata in minuti</p>
+                    </div>
+                    <div class="item6">
+                        <input type="number" class="numberStep" step="1" value="10"
+                               min="5" max="30" id="durataMinutiDiserbazione">
+                    </div>
+                </div>
+                <div class="grid-container">
+                    <div class="item7">
+                        <label id="labelAttivazioneProgrammataDiserbazione"
+                               data-toggle="popover" title="Diserbazione programmata attivata"
+                               data-placement="left" data-trigger="focus">Attivazione
+                            programmata</label>
+                    </div>
+                    <div class="item8">
+                        <label class="switch"> <input type="checkbox"
+                                                      id="bottoneProgrammazioneDiserbazione"> <span
+                                class="slider round"></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="grid-container">
+                    <div class="item9">
+                        <p>Dalle ore</p>
+                        <p>alle ore</p>
+                    </div>
+                    <div class="item10">
+                        <p>
+                            <input type="number" class="numberStep" step="1" value="5"
+                                   min="0" max="23" id="tempoInizioProgrammazioneDiserbazione">
+                        </p>
+                        <p>
+                            <input type="number" class="numberStep" step="1" value="6"
+                                   min="1" max="24" id="tempoFineProgammazioneDiserbazione">
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- fine funzionalità diserbazione -->
+
+            <!-- inizio funzionalità irrigazione -->
+
+            <div id="FunzionalitaIrrigazione">
+                <div class="grid-container">
+                    <div class="item1">
+                        <button type="button" id="indietroIrrigazione"
+                                class="btn btn-danger btn-sm tastoIndietroEetichetta">
+                            <strong><span class="glyphicon glyphicon-menu-left"
+                                          aria-hidden="true"></span> Indietro</strong>
+                        </button>
+                    </div>
+                    <div class="item2">
+                        <label>Irrigazione</label>
+                    </div>
+                </div>
+                <div class="grid-container">
+                    <div class="item3">
+                        <label id="labelAttivaIrrigazione" data-toggle="popover"
+                               title="Irrigazione attivata" data-placement="left"
+                               data-trigger="focus">Attiva</label>
+                    </div>
+                    <div class="item4">
+                        <label class="switch"> <input type="checkbox"
+                                                      id="bottoneAttivaOraIrrigazione"> <span
+                                class="slider round"></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="grid-container">
+                    <div class="item5">
+                        <p>Durata in minuti</p>
+                    </div>
+                    <div class="item6">
+                        <input type="number" class="numberStep" step="10"
+                               id="durataAttivaOraIrrigazione" value="10" min="10" max="120">
+                    </div>
+                </div>
+                <div class="grid-container">
+                    <div class="item7">
+                        <label id="labelAttivazioneProgrammataIrrigazione"
+                               data-toggle="popover" title="Irrigazione programmata attivata"
+                               data-placement="left" data-trigger="focus">Attivazione
+                            programmata</label>
+                    </div>
+                    <div class="item8">
+                        <label class="switch"> <input type="checkbox"
+                                                      id="bottoneProgrammazioneIrrigazione"> <span
+                                class="slider round"></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="grid-container">
+                    <div class="item9">
+                        <p>Dalle ore</p>
+                        <p>alle ore</p>
+                    </div>
+                    <div class="item10">
+                        <p>
+                            <input type="number" class="numberStep" step="1"
+                                   id="tempoInizioProgrammazioneIrrigazione" min="0" max="23"
+                                   value="20">
+                        </p>
+                        <p>
+                            <input type="number" class="numberStep" step="1"
+                                   id="tempoFineProgrammazioneIrrigazione" min="1" max="24"
+                                   value="21">
+                        </p>
+                    </div>
+
+                </div>
+                <div style="margin-left: 10px;">
+                    <p>Giorni in cui irrigare:</p>
+
+
+                    <div class="checkbox">
+                        <label><input type="checkbox" value=""
+                                      id="lunediIrrigazione">Lunedì</label>
+                    </div>
+                    <div class="checkbox">
+                        <label><input type="checkbox" value=""
+                                      id="martediIrrigazione">Martedì</label>
+                    </div>
+                    <div class="checkbox">
+                        <label><input type="checkbox" value=""
+                                      id="mercolediIrrigazione">Mercoledì</label>
+                    </div>
+                    <div class="checkbox">
+                        <label><input type="checkbox" value=""
+                                      id="giovediIrrigazione">Giovedì</label>
+                    </div>
+                    <div class="checkbox">
+                        <label><input type="checkbox" value=""
+                                      id="venerdiIrrigazione">Venerdì</label>
+                    </div>
+                    <div class="checkbox">
+                        <label><input type="checkbox" value=""
+                                      id="sabatoIrrigazione">Sabato</label>
+                    </div>
+                    <div class="checkbox">
+                        <label><input type="checkbox" value=""
+                                      id="domenicaIrrigazione">Domenica</label>
+                    </div>
+                </div>
+
+
+            </div>
+            <!-- fine funzionalità irrigazione -->
+
+            <!-- inizio funzionalità concimazione -->
+
+            <div id="FunzionalitaConcimazione">
+                <div class="grid-container">
+                    <div class="item1">
+                        <button type="button" id="indietroConcimazione"
+                                class="btn btn-danger btn-sm tastoIndietroEetichetta">
+                            <strong><span class="glyphicon glyphicon-menu-left"
+                                          aria-hidden="true"></span> Indietro</strong>
+                        </button>
+                    </div>
+                    <div class="item2">
+                        <label>Concimazione</label>
+                    </div>
+                </div>
+                <div class="grid-container">
+                    <div class="item3">
+                        <label id="labelAttivaConcimazione" data-toggle="popover"
+                               title="Concimazione attivata" data-placement="left"
+                               data-trigger="focus">Attiva</label>
+                    </div>
+                    <div class="item4">
+                        <label class="switch"> <input type="checkbox"
+                                                      id="bottoneAttivaConcimazione"> <span
+                                class="slider round"></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="grid-container">
+                    <div class="item5">
+                        <p>Porta la soglia di PH al valore di:</p>
+                    </div>
+                    <div class="item6">
+                        <input type="number" class="numberStep" step="1"
+                               id="phAttivaOraConcimazione" value="7" min="0" max="14">
+                    </div>
+                </div>
+                <div class="grid-container">
+
+                    <div class="item13">
+                        <p>Tipo di concime</p>
+                    </div>
+
+                    <div class="form-group item14">
+                        <select class="form-control" id="tipoConcimeAttivaOra">
+                            <option>Organico</option>
+                            <option>Tipo 1</option>
+                            <option>Tipo 2</option>
+
+                        </select>
+                    </div>
+                </div>
+                <div class="grid-container">
+                    <div class="item7">
+                        <label id="labelAttivazioneProgrammataConcimazione"
+                               data-toggle="popover" title="Concimazione programmata attivata"
+                               data-placement="left" data-trigger="focus">Attivazione
+                            programmata</label>
+                    </div>
+                    <div class="item8">
+                        <label class="switch"> <input type="checkbox"
+                                                      id="bottoneProgrammazioneConcimazione"> <span
+                                class="slider round"></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="grid-container">
+                    <div class="item9">
+                        <p>PH minimo</p>
+                        <p>PH massimo</p>
+                    </div>
+                    <div class="item10">
+                        <p>
+                            <input type="number" id="phMinimoProgrammazioneConcimazione"
+                                   class="numberStep" step="1" value="6" min="0" max="13">
+                        </p>
+                        <p>
+                            <input type="number" id="phMassimoProgrammazioneConcimazione"
+                                   class="numberStep" step="1" value="8" min="1" max="14">
+                        </p>
+                    </div>
+                </div>
+                <div class="grid-container">
+
+                    <div class="item11">
+                        <p>Tipo di concime</p>
+                    </div>
+
+                    <div class="form-group item12">
+                        <select class="form-control" id="tipoConcimeProgrammazione">
+                            <option>Organico</option>
+                            <option>Tipo 1</option>
+                            <option>Tipo 2</option>
+
+                        </select>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- fine funzionalità concimazione -->
+
+            <div id="FunzionalitaDisinfestazione">
+                <div class="grid-container">
+                    <div class="item1">
+                        <button type="button" id="indietroDisinfestazione"
+                                class="btn btn-danger btn-sm tastoIndietroEetichetta">
+                            <strong><span class="glyphicon glyphicon-menu-left"
+                                          aria-hidden="true"></span> Indietro</strong>
+                        </button>
+                    </div>
+                    <div class="item2">
+                        <label>Disinfestazione</label>
+                    </div>
+                </div>
+                <div class="grid-container">
+                    <div class="item3">
+                        <label id="labelAttivaDisinfestazione" data-toggle="popover"
+                               title="Disinfestazione attivata" data-placement="left"
+                               data-trigger="focus"> Attiva</label>
+                    </div>
+                    <div class="item4">
+                        <label class="switch"> <input type="checkbox"
+                                                      id="bottoneAttivaDisinfestazione"> <span
+                                class="slider round"></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="grid-container">
+                    <div class="item5">
+                        <p>Durata in minuti</p>
+                    </div>
+                    <div class="item6">
+                        <input type="number" class="numberStep" step="1" value="10"
+                               min="5" max="30" id="durataMinutiDisinfestazione">
+                    </div>
+                </div>
+                <div class="grid-container">
+                    <div class="item7">
+                        <label id="labelAttivazioneProgrammataDisinfestazione"
+                               data-toggle="popover"
+                               title="Disinfestazione programmata attivata"
+                               data-placement="left" data-trigger="focus">Attivazione
+                            programmata</label>
+                    </div>
+                    <div class="item8">
+                        <label class="switch"> <input type="checkbox"
+                                                      id="bottoneProgrammazioneDisinfestazione"> <span
+                                class="slider round"></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="grid-container">
+                    <div class="item9">
+                        <p>Dalle ore</p>
+                        <p>alle ore</p>
+                    </div>
+                    <div class="item10">
+                        <p>
+                            <input type="number" class="numberStep" step="1" value="3"
+                                   min="0" max="23" id="tempoInizioProgrammazioneDisinfestazione">
+                        </p>
+                        <p>
+                            <input type="number" class="numberStep" step="1" value="4"
+                                   min="1" max="24" id="tempoFineProgammazioneDisinfestazione">
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- fine funzionalità disinfestazione -->
+
+            <div id="FunzionalitaUmidificazione">
+                <div class="grid-container">
+                    <div class="item1">
+                        <button type="button" id="indietroUmidificazione"
+                                class="btn btn-danger btn-sm tastoIndietroEetichetta">
+                            <strong><span class="glyphicon glyphicon-menu-left"
+                                          aria-hidden="true"></span> Indietro</strong>
+                        </button>
+                    </div>
+                    <div class="item2">
+                        <label>Umidificazione</label>
+                    </div>
+                </div>
+                <div class="grid-container">
+                    <div class="item3">
+                        <label id="labelAttivaUmidificazione" data-toggle="popover"
+                               title="Umidificazione attivata" data-placement="left"
+                               data-trigger="focus">Attiva</label>
+                    </div>
+                    <div class="item4">
+                        <label class="switch"> <input type="checkbox"
+                                                      id="bottoneAttivaUmidificazione"> <span
+                                class="slider round"></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="grid-container">
+                    <div class="item5">
+                        <p>Porta umidità a %</p>
+                    </div>
+                    <div class="item6">
+                        <input type="number" class="numberStep" step="1" value="40"
+                               min="0" max="100" id="umiditaAttivaOraUmidificazione">
+                    </div>
+                </div>
+                <div class="grid-container">
+                    <div class="item7">
+                        <label id="labelAttivazioneProgrammataUmidificazione"
+                               data-toggle="popover"
+                               title="Umidificazione programmata attivata"
+                               data-placement="left" data-trigger="focus">Attivazione
+                            programmata</label>
+                    </div>
+                    <div class="item8">
+                        <label class="switch"> <input type="checkbox"
+                                                      id="bottoneProgrammazioneUmidificazione"> <span
+                                class="slider round"></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="grid-container">
+                    <div class="item9">
+                        <p>Non inferiore a %</p>
+                        <p>Non superiore a %</p>
+                    </div>
+                    <div class="item10">
+                        <p>
+                            <input type="number" class="numberStep" step="1" value="20"
+                                   min="0" max="100"
+                                   id="umiditaMinimaProgrammazioneUmidificazione">
+                        </p>
+                        <p>
+                            <input type="number" class="numberStep" step="1" value="60"
+                                   min="0" max="100"
+                                   id="umiditaMassimaProgammazioneUmidificazione">
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- fine funzionalità Umidificazione -->
+
+            <div id="FunzionalitaTermoventilazione">
+                <div class="grid-container">
+                    <div class="item1">
+                        <button type="button" id="indietroTermoventilazione"
+                                class="btn btn-danger btn-sm tastoIndietroEetichetta">
+                            <strong><span class="glyphicon glyphicon-menu-left"
+                                          aria-hidden="true"></span> Indietro</strong>
+                        </button>
+                    </div>
+                    <div class="item2">
+                        <label>Termoventilazione</label>
+                    </div>
+                </div>
+                <div class="grid-container">
+                    <div class="item3">
+                        <label id="labelAttivaTermoventilazione" data-toggle="popover"
+                               title="Termoventilazione attivata" data-placement="left"
+                               data-trigger="focus">Attiva</label>
+                    </div>
+                    <div class="item4">
+                        <label class="switch"> <input type="checkbox"
+                                                      id="bottoneAttivaTermoventilazione"> <span
+                                class="slider round"></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="grid-container">
+                    <div class="item5">
+                        <p>Porta temperatura a °C</p>
+                    </div>
+                    <div class="item6">
+                        <input type="number" class="numberStep" step="1" value="20"
+                               min="-10" max="40" id="temperaturaAttivaOraTermoventilazione">
+                    </div>
+                </div>
+                <div class="grid-container">
+                    <div class="item7">
+                        <label id="labelAttivazioneProgrammataTermoventilazione"
+                               data-toggle="popover"
+                               title="Termoventilazione programmata attivata"
+                               data-placement="left" data-trigger="focus">Attivazione
+                            programmata</label>
+                    </div>
+                    <div class="item8">
+                        <label class="switch"> <input type="checkbox"
+                                                      id="bottoneProgrammazioneTermoventilazione"> <span
+                                class="slider round"></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="grid-container">
+                    <div class="item9">
+                        <p>Non inferiore a °C</p>
+                        <p>Non superiore a °C</p>
+                    </div>
+                    <div class="item10">
+                        <p>
+                            <input type="number" class="numberStep" step="1"
+                                   id="temperaturaMinimaProgrammazioneTermoventilazione"
+                                   value="10" min="-10" max="40">
+                        </p>
+                        <p>
+                            <input type="number" class="numberStep" step="1"
+                                   id="temperaturaMassimaProgrammazioneTermoventilazione"
+                                   value="22" min="-10" max="40">
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- fine funzionalità Termoventilazione -->
+
+
+        </div>
+        <!--contenitore di tutto quello che riguarda le funzionalità-->
+
+    </div>
+</div>
+
+<script
+        src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script
+        src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<!-- 	<script
+    src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script
+    src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>-->
+
+
+<script src="scripts/login.js"></script>
+<script src="scripts/gestioneSerraScript.js"></script>
+<script src="scripts/userpage.js"></script>
+
+
+</body>
+</html>

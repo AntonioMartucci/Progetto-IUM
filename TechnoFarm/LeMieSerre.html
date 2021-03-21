@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TechnoFarm</title>
+</head>
+<body>
+
+</body>
+</html><!DOCTYPE html>
+<html>
+<head>
+    <style>
+        #buttons {
+            margin: 10px;
+            background-color: #F5DEB3;
+            color: black;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+
+        }
+
+        /* The Modal (background) */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            padding-top: 100px; /* Location of the box */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(0, 0, 0); /* Fallback color */
+            background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+        }
+
+        /* Modal Content */
+        .modal-content {
+            background-color: #fefefe;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+        }
+
+        .modal-backdrop {
+            /* bug fix - no overlay */
+            display: none;
+        }
+
+        /* The Close Button */
+        .close {
+            color: #aaaaaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover, .close:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+
+    </style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet"
+          href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script
+            src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script
+            src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/css/bootstrap-select.min.css">
+
+    <script src="scripts/login.js"></script>
+    <script src="scripts/register.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/js/bootstrap-select.min.js"></script>
+
+
+    <!-- (Optional) Latest compiled and minified JavaScript translation files -->
+    <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/js/i18n/defaults-*.min.js"></script>
+
+    <!-- Codice Serra -->
+    <script
+            src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+    <link href="styleSheets/headerFooter.css" rel="stylesheet" />
+    <link href="styleSheets/headerFooter.css" rel="stylesheet" />
+    <link href="styleSheets/homeStyle.css" rel="stylesheet" />
+    <link href="styleSheets/GrigliaSerre.css" rel="stylesheet" />
+
+    <title>TechnoFarm</title>
+</head>
+
+
+<body style="background-color:lightgreen">
+
+<nav id = "header" class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse"
+                    data-target="#navbar-collapse-main">
+                <span class="sr-only"> Toggle navigation </span> <span
+                    class="icon-bar"></span> <span class="icon-bar"></span> <span
+                    class="icon-bar"></span>
+            </button>
+            <a id="logo" class="navbar-brand" href="index.html"><img id="immagineLogo" class="img-rounded"
+                                                                     src="https://i.ibb.co/bFP8XmC/Logo2.png" alt="logo"></a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="navbar-collapse-main">
+            <ul class="nav navbar-nav navbar-right">
+                <li><button class="btn btn-primary" id="buttons" type="button"
+                            data-toggle="modal" data-target="#myModal">Aggiungi Serra</button></li>
+                <li><button id="buttons" type="button" class="btn btn-primary"
+                            onclick="removeItem()" >Elimina Serra</button></li>
+                <li>
+                    <a onclick='return check(true)' title="Login" style="color: #F5DEB3" class="vociMenu" href="#" data-toggle="modal" data-target="#modalLoginForm"><i class="fas fa-user"></i> </a>
+                </li>
+                <li  id = "bottoneRegistrazione"><a title="Registrazione" style="color: #F5DEB3" class="vociMenu" href="#" data-toggle="modal" data-target="#modalRegistrazioneForm"> <i class="fas fa-user-plus"></i>
+                </a></li>
+                <li style="display: none;" id = "leMieSerre"><a onclick='return check(false)' title="Le mie serre" style="color: #F5DEB3" class="vociMenu" href="LeMieSerre.html" data-toggle="modal" data-target="#modalLoginForm"> <i class="fa fa-pagelines"></i>
+                </a></li>
+            </ul>
+
+
+
+
+
+
+
+
+
+
+
+            <div class="modal fade" id="myModal" role="dialog">
+                <div class="modal-dialog">
+
+
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h2 style="text-align: center" class="modal-title">Aggiungi
+                                Serra</h2>
+                        </div>
+                        <div class="modal-body">
+                            <p>
+                            <h4 style="text-align: center">Inserisci codice serra:</h4>
+                            </p>
+
+                            <form class="form-aggiungiSerra" action="#" method="POST">
+
+
+                                <input type="text" class="form-control" id="code"
+                                       placeholder="12345-12345-12345-12345" size="16" />
+
+
+                                <h4 style="text-align: center">Inserisci nome serra:</h4>
+                                <input type="text" id="nome" class="form-control"
+                                       placeholder="Nome"><br>
+
+
+
+                                <div class="container">
+                                    <div class="row"></div>
+                                    <div class="col-sm-6">
+                                        <input type="checkbox" id="Temperatura"> Temperatura<br>
+                                        <input type="checkbox" id="Umidità"> Umidità del terreno<br>
+                                        <input type="checkbox" id="ph"> Ph terreno<br>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input type="checkbox" id="Concimazione">
+                                        Concimazione<br> <input type="checkbox" id="Diserbazione"> Diserbazione<br>
+                                        <input type="checkbox" id="Disinfestazione">
+                                        Disinfestazione<br> <input type="checkbox" id="Termoventilazione"> Termoventilazione<br>
+                                        <input type="checkbox" id="Irrigazione"> Irrigazione<br>
+                                        <input type="checkbox" id="Umidificazione"> Umidificazione<br>
+                                    </div>
+                                </div>
+                            </form>
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-primary"
+                                    data-dismiss="modal" onclick="aggiungi()">Aggiungi
+                                Serra</button>
+                            <button type="button" class="btn btn-primary"
+                                    data-dismiss="modal">Annulla</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+
+
+
+        </div>
+
+    </div>
+    </div>
+</nav>
+<h2 style="text-align: center; color: red; visibility: hidden;"
+    id="avviso">
+    <B>Clicca sulla serra che vuoi eliminare</B> <br><br><button class="btn btn-primary" id="a" onclick="finito()" style="visibility: hidden;background-color:#F5DEB3;color:black">Esci dalla modalità di eliminazione</button>
+</h2>
+
+<div class="grid-container" style="padding-top: 50px">
+    <a href="GestioneSerra.html" class="grid-item" >Pomodori</a>
+    <a href="GestioneSerra.html" class="grid-item" >Patate</a>
+    <a href="GestioneSerra.html" class="grid-item" >Insalata</a>
+    <a href="GestioneSerra.html" class="grid-item" >Carciofi</a>
+
+</div>
+
+
+<!-- Footer (Da sistemare d'accapo)-->
+<footer> </footer>
+
+
+<script type="text/javascript">
+
+    function openForm() {
+        document.getElementById("myForm").style.display = "block";
+    }
+
+
+    function closeForm() {
+        document.getElementById("myForm").style.display = "none";
+    }
+
+    function aggiungi(){
+        $('.grid-container').append($('<a href="GestioneSerra.html" class="grid-item" style="background-color: #F5DEB3">'+$("#nome").val()+'</a>'));
+    };
+
+
+    function elimina() {
+
+        $('div .grid-item').click(function(e){
+
+            if (confirm("Sicuro di voler eliminare la serra?")) {
+                $(e.target).remove();
+            } else {
+
+            }
+});
+    }
+
+    <!--script per procedere all'eliminazione-->
+    function removeItem() {
+        $(document).ready(function(){
+            $('a').click(function(e){
+                e.preventDefault();
+            });
+        });
+        document.getElementById("avviso").style.visibility = "visible";
+        document.getElementById("a").style.visibility = "visible";
+        var handler=elimina();
+        $( ".grid-item" ).bind( "click", handler );
+
+    }
+
+
+    <!--script per terminare l'operazione di eliminazione-->
+    function finito() {
+        document.getElementById("avviso").style.visibility = "hidden";
+        document.getElementById("a").style.visibility = "hidden";
+        var handler1=elimina();
+
+        $( ".grid-item" ).unbind( "click", handler1 );
+
+    }
+
+
+    $('#code').keyup(function() {
+        var foo = $(this).val().split("-").join("");
+        if (foo.length > 0) {
+            foo = foo.match(new RegExp('.{1,5}', 'g')).join("-");
+        }
+        $(this).val(foo);
+    });
+
+
+</script>
+</body>
+</html>

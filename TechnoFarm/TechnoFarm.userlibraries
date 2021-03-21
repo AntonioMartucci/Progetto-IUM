@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eclipse-userlibraries>
+  <library name="all">
+    <archive path="C:/Users/Lucio/AppData/Roaming/JetBrains/IntelliJIdea2020.1/javascript/extLibs/http_use.fontawesome.com_releases_v5.8.2_css_all.css" />
+  </library>
+  <library name="bootstrap">
+    <archive path="C:/Users/Lucio/AppData/Roaming/JetBrains/IntelliJIdea2020.1/javascript/extLibs/http_maxcdn.bootstrapcdn.com_bootstrap_3.4.0_css_bootstrap.css" />
+    <archive path="C:/Users/Lucio/AppData/Roaming/JetBrains/IntelliJIdea2020.1/javascript/extLibs/http_maxcdn.bootstrapcdn.com_bootstrap_3.4.0_js_bootstrap.js" />
+  </library>
+  <library name="bootstrap-select">
+    <archive path="C:/Users/Lucio/AppData/Roaming/JetBrains/IntelliJIdea2020.1/javascript/extLibs/http_cdn.jsdelivr.net_npm_bootstrap-select@1.13.9_dist_css_bootstrap-select.css" />
+    <archive path="C:/Users/Lucio/AppData/Roaming/JetBrains/IntelliJIdea2020.1/javascript/extLibs/http_cdn.jsdelivr.net_npm_bootstrap-select@1.13.9_dist_js_bootstrap-select.js" />
+  </library>
+  <library name="font-awesome">
+    <archive path="C:/Users/Lucio/AppData/Roaming/JetBrains/IntelliJIdea2020.1/javascript/extLibs/http_cdnjs.cloudflare.com_ajax_libs_font-awesome_4.7.0_css_font-awesome.css" />
+  </library>
+  <library name="jquery">
+    <archive path="C:/Users/Lucio/AppData/Roaming/JetBrains/IntelliJIdea2020.1/javascript/extLibs/http_ajax.googleapis.com_ajax_libs_jquery_2.1.1_jquery.js" />
+    <archive path="C:/Users/Lucio/AppData/Roaming/JetBrains/IntelliJIdea2020.1/javascript/extLibs/http_ajax.googleapis.com_ajax_libs_jquery_3.4.0_jquery.js" />
+  </library>
+</eclipse-userlibraries>
+

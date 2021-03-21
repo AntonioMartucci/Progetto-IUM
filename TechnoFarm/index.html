@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet"
+          href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script
+            src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script
+            src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+    <link href="styleSheets/headerFooter.css" rel="stylesheet"/>
+    <link href="styleSheets/homeStyle.css" rel="stylesheet"/>
+
+    <title>TechnoFarm</title>
+</head>
+
+<body>
+
+
+<!-- LOGIN -->
+<div class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header text-center">
+                <h4 class="modal-title w-100 font-weight-bold">Login</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body mx-3">
+                <div class="md-form mb-5">
+                    <i class="fas fa-envelope prefix grey-text"></i>
+                    <input id="email" type="email" id="defaultForm-email" class="form-control validate">
+                    <label data-error="wrong" data-success="right" for="defaultForm-email">Email</label>
+                </div>
+
+                <div class="md-form mb-4">
+                    <i class="fas fa-lock prefix grey-text"></i>
+                    <input id="password" type="password" id="defaultForm-pass" class="form-control validate">
+                    <label data-error="wrong" data-success="right" for="defaultForm-pass">Password</label>
+                </div>
+
+                <div><h3 style="color: red;" id="errore"></h3></div>
+
+            </div>
+            <div class="modal-footer d-flex justify-content-center">
+                <button onclick="validateForm()" class="btn btn-default">Login</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- FINE LOGIN -->
+
+<!-- REGISTRAZIONE -->
+<div class="modal fade" id="modalRegistrazioneForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header text-center">
+                <h4 class="modal-title w-100 font-weight-bold">Registrazione</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body mx-3">
+                <div style="margin-bottom: 18px;" class="md-form mb-5">
+                    <i class="fa fa-user prefix grey-text"></i>
+                    <input type="email"  id="nomeUtente" class="form-control validate">
+                    <label data-error="wrong" data-success="right" for="defaultForm-email">Nome Utente</label>
+                </div>
+                <div class="md-form mb-5">
+                    <i class="fas fa-envelope prefix grey-text"></i>
+                    <input type="email" id="defaultForm-email1" class="form-control validate">
+                    <label data-error="wrong" data-success="right" for="defaultForm-email">Email</label>
+                </div>
+                <div><h3 style="color: red;" id="erroreRegmail"></h3></div>
+
+                <div class="md-form mb-4">
+                    <i class="fas fa-lock prefix grey-text"></i>
+                    <input type="password" id="defaultForm-pass1" class="form-control validate">
+                    <label data-error="wrong" data-success="right" for="defaultForm-pass">Password</label>
+                </div>
+                <div><h3 style="color: red;" id="erroreRegpass"></h3></div>
+
+                <div class="md-form mb-4">
+                    <i class="fas fa-lock prefix grey-text"></i>
+                    <input type="password" id="defaultForm-pass2" class="form-control validate">
+                    <label data-error="wrong" data-success="right" for="defaultForm-pass">Ripeti Password</label>
+                </div>
+
+                <div><h3 style="color: red;" id="erroreRegpass2"></h3></div>
+
+            </div>
+            <div class="modal-footer d-flex justify-content-center">
+                <button onclick="validateForm(controlla())" class="btn btn-default">Registrazione</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- FINE REGISTRAZIONE -->
+
+
+<nav id = "header" class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse"
+                    data-target="#navbar-collapse-main">
+                <span class="sr-only"> Toggle navigation </span> <span
+                    class="icon-bar"></span> <span class="icon-bar"></span> <span
+                    class="icon-bar"></span>
+            </button>
+            <a id="logo" class="navbar-brand" href="index.html"><img id="immagineLogo" class="img-rounded"
+                                                                     src="https://i.ibb.co/bFP8XmC/Logo2.png" alt="logo"></a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="navbar-collapse-main">
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a onclick='return check(true)' title="Login" style="color: #F5DEB3" class="vociMenu" href="#" data-toggle="modal" data-target="#modalLoginForm"><i class="fas fa-user"></i> </a>
+                </li>
+                <li  id = "bottoneRegistrazione"><a title="Registrazione" style="color: #F5DEB3" class="vociMenu" href="#" data-toggle="modal" data-target="#modalRegistrazioneForm"> <i class="fas fa-user-plus"></i>
+                </a></li>
+                <li style="display: none;" id = "leMieSerre"><a onclick='return check(false)' title="Le mie serre" style="color: #F5DEB3" class="vociMenu" href="LeMieSerre.html" data-toggle="modal" data-target="#modalLoginForm"> <i class="fa fa-pagelines"></i>
+                </a></li>
+            </ul>
+
+
+        </div>
+    </div>
+
+</nav>
+
+<!-- carousel -->
+<div class="container">
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <!-- Indicators  -->
+
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
+
+
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+            <div class="item active"
+                 style="background-image: url(https://katanaproject.eu/wp-content/uploads/2017/10/AugCurated_1200x630_Technology.jpg);">
+                <div class="carousel-caption">
+                </div>
+            </div>
+
+            <div class="item"
+                 style="background-image: url(https://iadsb.tmgrup.com.tr/d4b8bf/1200/627/0/30/1000/553?u=https://idsb.tmgrup.com.tr/2019/11/22/1574427765659.jpg);">
+            </div>
+
+            <div class="item"
+                 style="background-image: url(https://www.souriau.com/sites/default/files/application/image/cover-image-smart-agri-min.jpg)">
+            </div>
+        </div>
+
+        <!-- Left and right controls -->
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span> <span
+                class="sr-only">Previous</span>
+        </a> <a class="right carousel-control" href="#myCarousel"
+                data-slide="next"> <span
+            class="glyphicon glyphicon-chevron-right"></span> <span
+            class="sr-only">Next</span>
+    </a>
+    </div>
+</div>
+
+
+
+
+<!--informazioni -->
+
+
+
+
+
+<div id="descrizione" class="container" style="font-size: 18px;">
+    Lo <b>Smart Farming</b> si concentra sull'uso dei dati acquisiti attraverso varie fonti (storiche, geografiche e strumentali) nella gestione delle attività agricole. I sistemi cosiddetti smart si differenziano per la loro capacità di registrare dati e ricavare informazioni da essi. Utilizzando hardware (IoT) e software (SaaS) per acquisire  dati e fornire informazioni utili per gestire tutte le operazioni in azienda, sia prima che dopo il raccolto. I dati saranno poi organizzati, accessibili in qualsiasi momento comodamente dal proprio dispositivo. Il nostro applicativo TechnoFarm ti garantisce tutto questo ma con l’ulteriore possibilità di effetuare operazioni automatiche all’interno della tua serra in base ai dati acquisiti.
+</div>
+
+
+<div class="background" style="margin-bottom: 200px;">
+    <div id="tabella" class="container" >
+        <div class="panel pricing-table">
+
+            <div class="pricing-plan">
+
+                <img src="https://i.ibb.co/Jrpc10r/17.png" alt="" class="pricing-img">
+                <h2 class="pricing-header">Agricoltura tradizionale</h2>
+                <ul class="pricing-features">
+                    <li class="pricing-features-item">Stesse pratiche di coltivazione in tutta la regione</li>
+                    <li class="pricing-features-item">Geolocalizzazione non possibile</li>
+                    <li class="pricing-features-item">Raccolta manuale dei dati</li>
+                </ul>
+            </div>
+
+            <div class="pricing-plan">
+                <img src="https://i.ibb.co/V2ByHYJ/18.png" alt="" class="pricing-img">
+                <h2 class="pricing-header">Smart farming</h2>
+                <ul class="pricing-features">
+                    <li class="pricing-features-item">Riduzione del carico di lavoro</li>
+                    <li class="pricing-features-item">Diminuzione costi di gestione</li>
+                    <li class="pricing-features-item">Raccolta automatica dei dati</li>
+                    <li class="pricing-features-item">Gestione della serra in tempo reale</li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- Footer-->
+<footer class="footer container-fluid text-center" style="background-color:#009E0F">
+
+    <p>TECHNOFARM v. 21.0.0 - LAL SRL con sede legale a New York</p>
+    <hr />
+    <div class="container">
+        <div class="row">
+            <div class="payments col-md-4">
+                <span>Contact us: support@Technofarm.com</span>
+            </div>
+
+            <div class="shipping  col-md-4">
+                <span>© Copyright 2018 Dynamic Drive. All Rights Reserved.</span>
+            </div>
+
+            <div  class="social col-md-4">
+                <span>Seguici:</span> <a class="btn btn-social-icon btn-instagram">
+                <span style="color: #000000" class="fa fa-instagram"></span>
+            </a> <a class="btn btn-social-icon btn-facebook"> <span style="color: #000000"
+                                                                    class="fa fa-facebook"></span>
+            </a>
+
+            </div>
+        </div>
+    </div>
+
+
+</footer>
+<div class="row" style="background-color: #009E0F">
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<script src="scripts/login.js"></script>
+<script src="scripts/register.js"></script>
+</body>
+</html>

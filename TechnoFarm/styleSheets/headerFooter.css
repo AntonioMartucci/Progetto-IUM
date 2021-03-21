@@ -1,0 +1,71 @@
+
+
+#logo{
+
+    padding-top: 0px;
+    float: left;
+
+}
+
+
+#header{
+    background-color: #009E0F;
+    float: left;
+}
+
+#immagineLogo{
+    width:200px;
+    height:50px;
+    float: left;
+}
+
+
+
+.footer{
+    position: relative;
+    margin-top: -150px;
+    height: 150px;
+    clear: both;
+    padding-top: 20px;
+
+}
+
+.shipping{
+    background-color: white;
+    padding:25px;
+}
+
+.social{
+    background-color: white;
+    padding-top: 25px;
+    padding-bottom: 37px;
+}
+.payments{
+    background-color: white;
+    padding-top: 27px;
+    padding-bottom: 43px;
+}
+hr {
+    height:1px;
+    border:none;
+    color:#000;
+    background-color:#000;
+}
+
+#form
+{
+    padding-top: 10px;
+
+    position: relative;
+    width: 81%;
+    left: 0;
+    text-align: center;
+    margin:0 auto;
+}
+
+@media screen and (max-width: 1080px){
+    #form{
+        position: relative;
+    }
+}
+
